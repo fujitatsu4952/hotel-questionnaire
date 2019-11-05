@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>questionner</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>お客様情報</h1>
+    
+    <!-- <form v-on:submit="addItem"> -->
+        
+    <form @submit.prevent="completeItem">
+      <p>国籍</p><input type="text" v-model="country">
+       <p>性別:</p>
+          <div><select v-model="selected">
+              <option></option>
+              <option>男性</option>
+              <option>女性</option>
+              <option>その他</option>
+              <option>回答しない</option>
+          </select></div>
+        
+        <p>生年月日:</p>
+              <div><input type="date" v-model="dated"></div>
+              
+        <p>住所:</p>
+          <div><input type="text" value="〒">
+          <br><textarea v-model="address" rows="4" cols="40"></textarea>           </div>
+
+        <p>職業:</p>
+           <div><input type="text" v-model="work"></div>
+        <p>電話番号:</p>
+           <div><input type="tel" v-model="tell"></div>
+
+        <p>宿泊人数:</p>
+            <div><select name="人数" v-model="people">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select></div>
+        <p>署名</p>
+             <div><textarea v-model="name"></textarea></div>
+
+      <input type="submit" value="complete">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+<!-- 
+・ブラウザで挙動
+・チェックイン時に予約名を聞いたら日報マクロエクセルファイル上のリストを確認し、名前をクリックか、ボタン押下でブラウザアプリに送信→　マクロ上で「対応済み」のマークがつく
+・すでにお客様側で入力している項目(手間いらずで取得している項目)は記載済みの状態になる
+・抜けている部分を入力いただく(ここのUXにこだわりたい　まんまGoogle フォームみたいなのは微妙)
+- 性別
+- 国籍
+- 住所(郵便番号から市町村までは自動入力)
+- 職業
+- 電話番号
+- 宿泊人数
+- 年齢
+- 署名(電子サインにしたい〜〜〜〜)
+- アンケート項目(上記画像参照)
+・記入したものが表になって手間いらずの情報と紐づけられるようになる -->

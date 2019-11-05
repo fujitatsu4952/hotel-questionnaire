@@ -1,0 +1,12 @@
+.address-post{
+ float: left;
+}
+
+.people {
+  display: block;
+}
+
+body{
+  text-align: center;
+  line-height: 10px;
+}
