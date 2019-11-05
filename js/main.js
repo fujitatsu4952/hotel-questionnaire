@@ -24,6 +24,13 @@
       //   e.preventDefault();
       //   this.todos.push(this.country);
       // }
+      mouseover: function(){
+        this.address = ''
+      },
+      mouseleave: function(){
+        this.address = 'Hover Me!'
+      },
+
       completeItem: function() {
         console.log(this.country);
         console.log(this.selected);

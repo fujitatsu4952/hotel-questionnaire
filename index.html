@@ -27,8 +27,8 @@
               <div><input type="date" v-model="dated"></div>
               
         <p>住所:</p>
-          <div><input type="text" value="〒">
-          <br><textarea v-model="address" rows="4" cols="40"></textarea>           </div>
+          <div><input type="text" value="〒"></div>
+          <div><textarea v-on:mouseover="mouseover"  v-on:mouseleave="mouseleave" v-model="address" rows="4" cols="40">{{address}}</textarea>           </div>
 
         <p>職業:</p>
            <div><input type="text" v-model="work"></div>
